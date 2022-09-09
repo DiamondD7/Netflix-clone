@@ -61,10 +61,9 @@
 
 .menu--icon {
     height: 30px;
-    width: 30px;
+    width: 35px;
     padding: 5px;
     stroke: #DADADA;
-
 }
 
 .netflix--logo{
@@ -98,6 +97,7 @@
     background-color:transparent;
     border:none;
     transform:rotate(90deg);
+    cursor:pointer;
 }
 
 .dots--icon {

@@ -1,6 +1,28 @@
-﻿import React from 'react';
+﻿
+import React, { useState, useEffect } from 'react';
+import { Popular_URL } from '../ApiAuthentication';
 
 export default function Home() {
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [popularMovies, setpopularMovies] = useState([]);
+
+    useEffect(() => {
+        fetch(Popular_URL)
+            .then(res => res.json())
+            .then((result) => {
+                setIsLoaded(true);
+                setpopularMovies(result);
+            },
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            )
+    }, [])
+
+    console.log(popularMovies);
+
     return (
         <>
             <div className="header--poster">
@@ -45,6 +67,16 @@ export default function Home() {
                     </div>
                     <p className="watch--now"><strong>Watch the series now</strong></p>
                 </div>
+            </div>
+
+            <div>
+                <ul>
+                    {popularMovies.map(item => (
+                        <li key={item.id}>
+                            {item.title} {item.vote_average}
+                        </li>
+                    ))}
+                </ul>
             </div>
         </>
     )
