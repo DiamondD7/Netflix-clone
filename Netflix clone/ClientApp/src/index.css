@@ -14,7 +14,7 @@
 .summary--div {
     padding-top: 500px;
     padding-left: 90px;
-    color: #BFBFBF;
+    color: #DADADA;
 }
 
 .watch--now{
@@ -23,12 +23,13 @@
 
 .poster--summary {
     width: 850px;
-    line-height: 25px;
+    line-height: 30px;
+    font-size:22px;
 }
 
 .summary--buttons {
-    padding: 5px 35px 5px 35px;
-    color: #BFBFBF;
+    padding: 10px 55px 10px 55px;
+    color: #DADADA;
     background-color: rgba(128, 128, 128, 0.26);
     border: none;
     border-radius: 3px;
@@ -37,9 +38,9 @@
 }
 
 .summary--buttons:hover{
-    padding:5px 35px 5px 35px;
+    padding: 10px 55px 10px 55px;
     color:black;
-    background-color:#BFBFBF;
+    background-color:#DADADA;
     border:none;
     border-radius:3px;
     margin-right:10px;
@@ -48,4 +49,59 @@
 
 .icon{
     height:24px
+}
+
+
+.hum--menu{
+    border:none;
+    background-color:transparent;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+.menu--icon {
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+    stroke: #DADADA;
+
+}
+
+.netflix--logo{
+    height:25px;
+    padding-left:30px;
+    padding-bottom:7px;
+}
+
+.search--div {
+    display: inline-block;
+    float:right;
+    padding:10px;
+    /*display: flex;*/
+    /*justify-content: flex-end;
+    align-content: center;*/
+}
+
+.search--button{
+    border:none;
+    background-color:transparent;
+    cursor:pointer;
+}
+
+.search--icon {
+    width: 30px;
+    height: 30px;
+    stroke: #DADADA;
+}
+
+.dots--button{
+    background-color:transparent;
+    border:none;
+    transform:rotate(90deg);
+}
+
+.dots--icon {
+    width: 35px;
+    height: 35px;
+    stroke: #DADADA;
 }
