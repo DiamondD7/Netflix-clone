@@ -1,0 +1,51 @@
+﻿body {
+    background-color: black;
+    font-family:sans-serif;
+}
+
+.header--poster {
+    height: 94vh;
+    position: relative;
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(./img/vik.jpg);
+    background-size: cover;
+    
+}
+
+.summary--div {
+    padding-top: 500px;
+    padding-left: 90px;
+    color: #BFBFBF;
+}
+
+.watch--now{
+    font-size:20px;
+}
+
+.poster--summary {
+    width: 850px;
+    line-height: 25px;
+}
+
+.summary--buttons {
+    padding: 5px 35px 5px 35px;
+    color: #BFBFBF;
+    background-color: rgba(128, 128, 128, 0.26);
+    border: none;
+    border-radius: 3px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.summary--buttons:hover{
+    padding:5px 35px 5px 35px;
+    color:black;
+    background-color:#BFBFBF;
+    border:none;
+    border-radius:3px;
+    margin-right:10px;
+}
+
+
+.icon{
+    height:24px
+}
