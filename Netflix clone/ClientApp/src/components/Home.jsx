@@ -10,9 +10,9 @@ export default function Home() {
     useEffect(() => {
         fetch(Popular_URL)
             .then(res => res.json())
-            .then((result) => {
+            .then((data) => {
                 setIsLoaded(true);
-                setpopularMovies(result);
+                setpopularMovies(data.results);
             },
                 (error) => {
                     setIsLoaded(true);
@@ -70,14 +70,13 @@ export default function Home() {
             </div>
 
             <div>
-                <ul>
-                    {popularMovies.map(item => (
-                        <li key={item.id}>
-                            {item.title} {item.vote_average}
-                        </li>
-                    ))}
+                <ul className="list">
+                    {popularMovies.map((item) => (
+                        <li key={item.id}>{item.title} & {item.overview}</li>
+                        ))}
                 </ul>
             </div>
         </>
     )
+
 }
