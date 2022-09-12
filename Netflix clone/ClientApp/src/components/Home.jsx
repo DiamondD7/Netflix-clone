@@ -7,6 +7,44 @@ export default function Home() {
     const [isLoaded, setIsLoaded] = useState(false);
     const [popularMovies, setpopularMovies] = useState([]);
 
+    const IMG_URL = "https://image.tmdb.org/t/p/w200";
+
+    const OpenCloseModal = () => {
+
+        const modal = document.querySelector('.modal');
+        const btnsOpenModal = document.querySelectorAll('.show--Modal');
+        const overlay = document.querySelector('.overlay');
+        const btnCloseModal = document.querySelector('.close--modal');
+
+        for (let i = 0; i < btnsOpenModal.length; i++) {
+            btnsOpenModal[i].addEventListener('click', function () {
+                modal.classList.remove('hidden');
+                overlay.classList.remove('hidden');
+            })
+
+            btnCloseModal.addEventListener('click', function () {
+                modal.classList.add('hidden');
+                overlay.classList.add('hidden');
+            })
+        }
+    }
+    const displayPopMovies =
+        (
+            <div className="movie-lists-div">
+                {popularMovies.map((item) => (
+                    <div>
+                        <button className="show--Modal" key={item.id} onClick={OpenCloseModal} ><img src={IMG_URL + item.poster_path} /></button>
+                        <div className="modal hidden">
+                            <img src={IMG_URL + item.backdrop_path} />
+                            <button className="close--modal">Close</button>
+                        </div>
+                    </div>
+                ))}
+
+            </div>
+        );
+
+
     useEffect(() => {
         fetch(Popular_URL)
             .then(res => res.json())
@@ -69,13 +107,11 @@ export default function Home() {
                 </div>
             </div>
 
-            <div>
-                <ul className="list">
-                    {popularMovies.map((item) => (
-                        <li key={item.id}>{item.title} & {item.overview}</li>
-                        ))}
-                </ul>
-            </div>
+
+
+            <p className="heading--popular">Popular on Netflix</p>
+            {displayPopMovies}
+            <div className="overlay hidden"></div>
         </>
     )
 
