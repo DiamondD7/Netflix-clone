@@ -6,7 +6,6 @@ export default function Home() {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [popularMovies, setpopularMovies] = useState([]);
-
     const IMG_URL = "https://image.tmdb.org/t/p/w200";
 
     const OpenCloseModal = () => {
