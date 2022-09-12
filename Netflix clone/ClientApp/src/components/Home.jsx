@@ -6,10 +6,17 @@ export default function Home() {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [popularMovies, setpopularMovies] = useState([]);
+    const [bckDrop, setbckDrop] = useState('');
+    const [popmovieTitle, setpopmovieTitle] = useState('');
+    const [popOverview, setpopOverview] = useState('');
     const IMG_URL = "https://image.tmdb.org/t/p/w200";
+    const BACK_URL = "https://image.tmdb.org/t/p/w500";
 
-    const OpenCloseModal = () => {
+    const OpenCloseModal = (itm) => {
 
+        setbckDrop(itm.backdrop_path);
+        setpopmovieTitle(itm.title);
+        setpopOverview(itm.overview);
         const modal = document.querySelector('.modal');
         const btnsOpenModal = document.querySelectorAll('.show--Modal');
         const overlay = document.querySelector('.overlay');
@@ -32,10 +39,16 @@ export default function Home() {
             <div className="movie-lists-div">
                 {popularMovies.map((item) => (
                     <div>
-                        <button className="show--Modal" key={item.id} onClick={OpenCloseModal} ><img src={IMG_URL + item.poster_path} /></button>
+                        <button className="show--Modal" key={item.id} onClick={() => OpenCloseModal(item)} ><img src={IMG_URL + item.poster_path} /></button>
                         <div className="modal hidden">
-                            <img src={IMG_URL + item.backdrop_path} />
-                            <button className="close--modal">Close</button>
+                            <img className="img--modal" src={BACK_URL + bckDrop} />
+                            <h2 className="title--modal">{popmovieTitle}</h2>
+                            <p className="overview--modal">{popOverview}</p>
+                            <button className="close--modal">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="closeModal--icon">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
                         </div>
                     </div>
                 ))}
