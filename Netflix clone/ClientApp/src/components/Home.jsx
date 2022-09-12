@@ -74,7 +74,7 @@ export default function Home() {
     console.log(popularMovies);
 
     return (
-        <>
+        <div>
             <div className="header--poster">
                 <button className="hum--menu">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="menu--icon">
@@ -124,7 +124,7 @@ export default function Home() {
             <p className="heading--popular">Popular on Netflix</p>
             {displayPopMovies}
             <div className="overlay hidden"></div>
-        </>
+        </div>
     )
 
 }
