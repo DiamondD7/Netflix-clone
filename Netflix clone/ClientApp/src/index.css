@@ -18,7 +18,7 @@ body {
 }
 
 .summary--div {
-    padding-top: 500px;
+    padding-top: 250px; /*JUST CHANGE THE PADDING FOR THE SUMMARY HEIGHT TO CHANGE.... 250px for laptop and 500px for PC*/
     padding-left: 90px;
     color: #DADADA;
 }
@@ -181,7 +181,7 @@ body {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 140vh;
+    height: 230vh; /*CHANGE THE HEIGHT FOR OVERLAY 160vh for laptop and about 140vh for PC*/
     background-color: rgba(0,0,0,0.9);
     z-index: 5;
 }

@@ -1,8 +1,7 @@
-﻿
-import React, { useState, useEffect } from 'react';
-import { Popular_URL } from '../ApiAuthentication';
+﻿import React from 'react';
 
-export default function Home() {
+
+function idkyet() {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [popularMovies, setpopularMovies] = useState([]);
@@ -123,8 +122,8 @@ export default function Home() {
 
             <p className="heading--popular">Popular on Netflix</p>
             {displayPopMovies}
+            <KidsGrid />
             <div className="overlay hidden"></div>
         </div>
     )
-
 }
