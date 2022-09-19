@@ -7,14 +7,13 @@
 body {
     background-color: black;
     font-family:sans-serif;
+    height:100vh;
 }
 
 .header--poster {
-    height: 94vh;
+    height: 95vh;
     position: relative;
-    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(./img/vik.jpg);
     background-size: cover;
-    
 }
 
 .summary--div {
@@ -25,6 +24,7 @@ body {
 
 .watch--now{
     font-size:20px;
+    margin-top:20px;
 }
 
 .poster--summary {
@@ -36,7 +36,7 @@ body {
 .summary--buttons {
     padding: 10px 55px 10px 55px;
     color: #DADADA;
-    background-color: rgba(128, 128, 128, 0.26);
+    background-color: rgba(128, 128, 128, 0.3);
     border: none;
     border-radius: 3px;
     margin-right: 10px;

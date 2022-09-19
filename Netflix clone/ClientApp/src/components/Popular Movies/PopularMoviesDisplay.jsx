@@ -34,8 +34,6 @@ const PopularMoviesDisplay = (props) => {
 
     }
 
-    console.log(movieTitle);
-
     useEffect(() => {
         setItem(props.data);
     }, [props])

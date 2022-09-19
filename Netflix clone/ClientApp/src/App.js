@@ -1,11 +1,30 @@
-﻿import React from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import PopularMoviesData from './components/Popular Movies/PopularMoviesData';
 import PopularKids from './components/PopularKids';
+import DramaData from './components/Drama/DramaData';
+import { Poster_URL } from './ApiAuthentication';
 
 export default function App() {
+    const [poster, setPoster] = useState([]);
+    const [ranPoster, setRanPoster] = useState([]);
+    const [pos, setPos] = useState('');
+    const IMG_URL = "https://image.tmdb.org/t/p/original";
+
+    useEffect(() => {
+        fetch(Poster_URL)
+            .then(res => res.json())
+            .then((data) => {
+                setPoster(data.results[Math.floor(Math.random() * data.results.length)]);
+            })
+        
+    }, [])
+
+
+    console.log(poster);
     return (
+
         <div>
-            <div className="header--poster">
+            <div style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(${IMG_URL}${poster.backdrop_path})` }} className="header--poster">
                 <button className="hum--menu">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="menu--icon">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -41,8 +60,8 @@ export default function App() {
                     </button>
 
                     <div className="poster--summary">
-                        <p>Ragnar Lothbrok is determined to sail west to discover new lands and riches despite an intimidating warning from Earl Heraldson.
-                            A Viking who is one of the best-known legendary Norse heroes and notorious as the scourge of Anglo-Saxon England and West Francia.
+                        <p>
+                            {poster.overview}
                         </p>
                     </div>
                     <p className="watch--now"><strong>Watch the series now</strong></p>
@@ -59,6 +78,10 @@ export default function App() {
                 <PopularKids />
             </div>
 
+            <div>
+                <p className="heading--popular">Popular Drama in The Past Year</p>
+                <DramaData />
+            </div>
 
             <div className="overlay hidden"></div>
         </div>

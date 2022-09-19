@@ -36,8 +36,6 @@ export default function KidsDataMovies(props) {
     }
 
 
-    console.log(bckDrop);
-
     useEffect(() => {
         setkidsMovies(props.data);
 
