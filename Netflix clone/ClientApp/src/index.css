@@ -10,14 +10,21 @@ body {
     height:100vh;
 }
 
+.poster--title {
+    font-size:30px;
+    color: #DADADA;
+
+    margin-bottom:10px;
+}
+
 .header--poster {
-    height: 95vh;
+    height: 100vh;
     position: relative;
     background-size: cover;
 }
 
 .summary--div {
-    padding-top: 250px; /*JUST CHANGE THE PADDING FOR THE SUMMARY HEIGHT TO CHANGE.... 250px for laptop and 500px for PC*/
+    padding-top: 230px; /*JUST CHANGE THE PADDING FOR THE SUMMARY HEIGHT TO CHANGE.... 250px for laptop and 500px for PC*/
     padding-left: 90px;
     color: #DADADA;
 }
@@ -73,9 +80,10 @@ body {
 }
 
 .netflix--logo{
-    height:25px;
+    height:27px;
     padding-left:30px;
     padding-bottom:7px;
+
 }
 
 .search--div {
@@ -95,7 +103,7 @@ body {
 
 .search--icon {
     width: 30px;
-    height: 30px;
+    height: 23px;
     stroke: #DADADA;
 }
 
@@ -108,7 +116,7 @@ body {
 
 .dots--icon {
     width: 35px;
-    height: 35px;
+    height: 27px;
     stroke: #DADADA;
 }
 
