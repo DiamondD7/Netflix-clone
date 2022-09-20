@@ -7,7 +7,7 @@
 body {
     background-color: black;
     font-family:sans-serif;
-    height:100vh;
+    height:100vh
 }
 
 .poster--title {
@@ -229,3 +229,69 @@ body {
     line-height:1.2;
     padding:0 25px 25px 25px;
 }
+
+
+
+
+/*NAVBAR--------------------------------------*/
+
+.ul-- {
+    position: absolute;
+    top: 0px;
+    z-index: 15;
+    list-style: none;
+    background-color: rgb(16 16 16);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 25vw;
+    height: 100vh;
+    color: #DADADA;
+    font-family: sans-serif;
+}
+
+.ul--::-webkit-scrollbar {
+    border-radius: 0;
+}
+
+.ul--::-webkit-scrollbar-track {
+    background-color: black;
+}
+
+.ul--::-webkit-scrollbar-thumb {
+    /*background-color: rgba(0,0,0,0.3); */
+    background-color: rgba(255, 255, 255,0.3);
+    
+}
+
+
+
+.ul-- li{
+    padding:20px 0 20px 20px;
+}
+
+.ul-- li:hover{
+    background-color:rgba(255, 255, 255,0.2);
+    border-left:5px solid red;
+}
+
+.closeHambtn--{
+    position:absolute;
+    top:5px;
+    left:330px;
+    z-index:16;
+
+    cursor:pointer;
+    width:40px;
+
+    border:none;
+    background-color:transparent;
+}
+
+
+.closeHam--icon {
+    stroke: rgba(255, 255, 255,0.3);
+}
+.closeHam--icon:hover {
+    stroke:red;
+}
+

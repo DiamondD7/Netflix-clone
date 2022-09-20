@@ -10,22 +10,57 @@ export default function App() {
     const [pos, setPos] = useState('');
     const IMG_URL = "https://image.tmdb.org/t/p/original";
 
+    const [openMenu, setopenMenu] = useState(false);
+
     useEffect(() => {
         fetch(Poster_URL)
             .then(res => res.json())
             .then((data) => {
                 setPoster(data.results[Math.floor(Math.random() * data.results.length)]);
             })
-        
+
     }, [])
 
+    const bod = document.getElementById('body--');
+    if (openMenu === true) {
+        bod.style.overflow = "hidden";
+    } else {
+        bod.style.overflow = "scroll";
+    }
 
-    console.log(poster);
     return (
-
         <div>
+            {openMenu &&
+                <nav className="Navbar--">
+                    <div className="overlay"></div>
+                    <button onClick={() => setopenMenu(false)} className="closeHambtn--"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="closeHam--icon">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    </button>
+                    <ul className="ul--">
+                        <li>Home</li>
+                        <li>Anime</li>
+                        <li>Dramas</li>
+                        <li>Thriller</li>
+                        <li>Horror</li>
+                        <li>Kids Movies</li>
+                        <li>TV Shows</li>
+                        <li>Romantic Movies</li>
+                        <li>Comedies</li>
+                        <li>Music & Musicals</li>
+                        <li>Action & Adventure</li>
+                        <li>Award-Winning Films</li>
+                        <li>Documentaries</li>
+                        <li>Available for Download</li>
+                        <li>International Movies</li>
+                        <li>Independent Movies</li>
+                        <li>Adult Films</li>
+                        <li>Scientific Films</li>
+                    </ul>
+                </nav>
+            }
             <div style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(${IMG_URL}${poster.backdrop_path})` }} className="header--poster">
-                <button className="hum--menu">
+                <button onClick={() => setopenMenu(!openMenu)} className="hum--menu">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="menu--icon">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
@@ -64,7 +99,7 @@ export default function App() {
                         </svg>
                     </button>
 
-                    
+
 
                     <div className="poster--summary">
                         <p>
