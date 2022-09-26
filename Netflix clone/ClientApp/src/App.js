@@ -28,8 +28,9 @@ export default function App() {
         bod.style.overflow = "scroll";
     }
 
+
     return (
-        <div>
+        <div className="contain">
             {openMenu &&
                 <nav className="Navbar--">
                     <div className="overlay"></div>
@@ -59,6 +60,8 @@ export default function App() {
                     </ul>
                 </nav>
             }
+
+
             <div style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(${IMG_URL}${poster.backdrop_path})` }} className="header--poster">
                 <button onClick={() => setopenMenu(!openMenu)} className="hum--menu">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="menu--icon">
@@ -110,6 +113,7 @@ export default function App() {
                 </div>
             </div>
 
+
             <div>
                 <p className="heading--popular">Popular on Netflix</p>
                 <PopularMoviesData />
@@ -124,8 +128,6 @@ export default function App() {
                 <p className="heading--popular">Popular Drama in The Past Year</p>
                 <DramaData />
             </div>
-
-            <div className="overlay hidden"></div>
         </div>
     )
 }

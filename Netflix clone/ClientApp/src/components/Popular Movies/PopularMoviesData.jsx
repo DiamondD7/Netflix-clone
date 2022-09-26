@@ -12,6 +12,7 @@ export default function PopularMoviesData() {
             .then(res => res.json())
             .then((data) => {
                 setItem(data.results);
+                console.log(data.results);
             })
     }, [])
 

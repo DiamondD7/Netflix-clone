@@ -10,17 +10,24 @@ body {
     height:100vh
 }
 
-.poster--title {
-    font-size:30px;
-    color: #DADADA;
 
-    margin-bottom:10px;
+.poster--title {
+    font-size: 30px;
+    color: #DADADA;
+    margin-bottom: 10px;
 }
 
 .header--poster {
     height: 100vh;
     position: relative;
     background-size: cover;
+}
+
+.header--video{
+    height:100vh;
+    width:900px;
+    position:relative;
+
 }
 
 .summary--div {
@@ -177,11 +184,13 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
     width: 40%;
     height: 95%;
     background-color: #424242;
     z-index: 11;
 
+    
 }
 
 .overlay {
@@ -189,7 +198,7 @@ body {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 230vh; /*CHANGE THE HEIGHT FOR OVERLAY 160vh for laptop and about 140vh for PC*/
+    height: 500vh; /*CHANGE THE HEIGHT FOR OVERLAY 160vh for laptop and about 140vh for PC*/
     background-color: rgba(0,0,0,0.9);
     z-index: 5;
 }
@@ -199,16 +208,35 @@ body {
     -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 30%);
 }
 
+.btnPlayModal--icon {
+    height: 60px;
+    stroke:rgba(255, 255, 255,0.4);
+}
 
-.close--modal{
+.btnPlay{
     position:absolute;
-    top:5px;
-    right:5px;
+    top:90px;
+    right:225px;
 
     border:none;
     background-color:transparent;
-    width:33px;
+
     cursor:pointer;
+}
+
+.btnPlayModal--icon:hover{
+    stroke:rgba(255,255,255,0.7);
+}
+
+
+.close--modal {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: none;
+    background-color: transparent;
+    width: 33px;
+    cursor: pointer;
 }
 
 .closeModal--icon {
