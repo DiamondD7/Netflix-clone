@@ -57,7 +57,7 @@ const DramaDisplay = (props) => {
                 {itemData.map((item) => (
                     <div key={item.id}>
                         <div>
-                            <button className="show--Modal" type="button" onClick={() => OpenModal(item)}><img src={IMG_URL + item.poster_path} /></button>
+                            <button className="show--Modal" type="button" onClick={() => OpenModal(item)}><img className="movieimage--grid" src={IMG_URL + item.poster_path} /></button>
                         </div>
 
                         {openModal ?

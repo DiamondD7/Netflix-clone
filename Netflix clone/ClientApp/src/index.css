@@ -317,6 +317,10 @@ body {
 /*----------RESPONSIVENESS-----------------*/
 
 @media (min-width:425px){
+    .movieimage--grid{
+        height:170px;
+    }
+
     .header--poster {
         height: 50vh;
         position: relative;
@@ -381,9 +385,57 @@ body {
         height: 40px;
         stroke: rgba(255, 255, 255,0.4);
     }
+
+    /*----HAMBURGER MENU----*/
+    .ul-- {
+        position: absolute;
+        top: 0px;
+        z-index: 15;
+        list-style: none;
+        background-color: rgb(16 16 16);
+        overflow-y: scroll;
+        overflow-x: hidden;
+        width: 35vw;
+        height: 100vh;
+        color: #DADADA;
+        font-family: sans-serif;
+    }
+
+    .closeHambtn-- {
+        position: absolute;
+        top: 5px;
+        left: 280px;
+        z-index: 16;
+        cursor: pointer;
+        width: 40px;
+        border: none;
+        background-color: transparent;
+    }
+    /*-----------------------*/
+
+    .title--modal {
+        color: #DADADA;
+        position: absolute;
+        font-size: 29px;
+        top: 40%;
+        margin-left: 35px;
+    }
+
+    .overview--modal {
+        color: #DADADA;
+        line-height: 1.2;
+        padding: 0 25px 25px 25px;
+        position: absolute;
+        top: 57%;
+    }
+
 }
 
 @media (min-width:768px) {
+    .movieimage--grid {
+        height: 220px;
+    }
+
     .header--poster {
         height: 60vh;
         position: relative;
@@ -450,10 +502,58 @@ body {
         height: 60px;
         stroke: rgba(255, 255, 255,0.4);
     }
+
+    /*----HAMBURGER MENU----*/
+    .ul-- {
+        position: absolute;
+        top: 0px;
+        z-index: 15;
+        list-style: none;
+        background-color: rgb(16 16 16);
+        overflow-y: scroll;
+        overflow-x: hidden;
+        width: 26vw;
+        height: 100vh;
+        color: #DADADA;
+        font-family: sans-serif;
+    }
+
+    .closeHambtn-- {
+        position: absolute;
+        top: 5px;
+        left: 300px;
+        z-index: 16;
+        cursor: pointer;
+        width: 40px;
+        border: none;
+        background-color: transparent;
+    }
+    /*-----------------------*/
+
+
+    .title--modal {
+        color: #DADADA;
+        position: absolute;
+        font-size: 29px;
+        top: 50%;
+        margin-left: 35px;
+    }
+
+    .overview--modal {
+        color: #DADADA;
+        line-height: 1.2;
+        padding: 0 25px 25px 25px;
+        position:absolute;
+        top:57%;
+    }
 }
 
 
 @media (min-width:1080px) {
+    .movieimage--grid {
+        height: 320px;
+    }
+
     .header--poster {
         height: 80vh;
         position: relative;
@@ -504,4 +604,49 @@ body {
         height: 60px;
         stroke: rgba(255, 255, 255,0.4);
     }
+
+    /*----HAMBURGER MENU----*/
+    .ul-- {
+        position: absolute;
+        top: 0px;
+        z-index: 15;
+        list-style: none;
+        background-color: rgb(16 16 16);
+        overflow-y: scroll;
+        overflow-x: hidden;
+        width: 20vw;
+        height: 100vh;
+        color: #DADADA;
+        font-family: sans-serif;
+    }
+
+    .closeHambtn-- {
+        position: absolute;
+        top: 5px;
+        left: 400px;
+        z-index: 16;
+        cursor: pointer;
+        width: 40px;
+        border: none;
+        background-color: transparent;
+    }
+    /*-----------------------*/
+
+
+    .title--modal {
+        color: #DADADA;
+        position: absolute;
+        font-size: 29px;
+        top: 40%;
+        margin-left: 35px;
+    }
+
+    .overview--modal {
+        color: #DADADA;
+        line-height: 1.2;
+        padding: 0 25px 25px 25px;
+        position: absolute;
+        top: 47%;
+    }
+
 }

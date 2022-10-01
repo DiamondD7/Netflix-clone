@@ -57,7 +57,7 @@ export default function KidsDataMovies(props) {
             <div className="movie-lists-div">
                 {kidsMovies.map((items) => (
                     <div key={items.id}>
-                        <button className="show--Modal" onClick={() => OpenModal(items)}><img src={IMG_URL + items.poster_path} /></button>
+                        <button className="show--Modal" onClick={() => OpenModal(items)}><img className="movieimage--grid" src={IMG_URL + items.poster_path} /></button>
 
                         {openModal ?
                             <div className="modal">
