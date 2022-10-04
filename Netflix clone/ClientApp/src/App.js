@@ -2,6 +2,8 @@
 import PopularMoviesData from './components/Popular Movies/PopularMoviesData';
 import PopularKids from './components/PopularKids';
 import DramaData from './components/Drama/DramaData';
+import ShowingNowMovies from './components/ShowingNow/ShowingNowMovies';
+import TvShowsData from './components/TV Shows/TvShowsData';
 import { Poster_URL } from './ApiAuthentication';
 
 export default function App() {
@@ -11,6 +13,7 @@ export default function App() {
     const IMG_URL = "https://image.tmdb.org/t/p/original";
 
     const [openMenu, setopenMenu] = useState(false);
+    const [openSearch, setopenSearch] = useState(false);
 
     useEffect(() => {
         fetch(Poster_URL)
@@ -34,7 +37,7 @@ export default function App() {
             {openMenu &&
                 <nav className="Navbar--">
                     <div className="overlay"></div>
-                    <button onClick={() => setopenMenu(false)} className="closeHambtn--"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="closeHam--icon">
+                    <button onClick={() => setopenMenu(!openMenu)} className="closeHambtn--"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="closeHam--icon">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                     </button>
@@ -61,6 +64,25 @@ export default function App() {
                 </nav>
             }
 
+            {openSearch &&
+
+                <div className="zzzz">
+                    <div className="overlay"></div>
+                    <div className="search--div--activate">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="search--icon--activated">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                        </svg>
+                        <input className="search--input" type="search" placeholder="Search" />
+                        <button className="back-btn-close" onClick={() => setopenSearch(!openSearch)}>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="search--back--icon">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                            </svg>
+                        </button>
+                    </div>
+
+                </div>
+            }
+
 
             <div style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(${IMG_URL}${poster.backdrop_path})` }} className="header--poster">
                 <button onClick={() => setopenMenu(!openMenu)} className="hum--menu">
@@ -72,7 +94,7 @@ export default function App() {
                 <img className="netflix--logo" src="https://image.tmdb.org/t/p/w500/wwemzKWzjKYJFfCeiB57q3r4Bcm.png"></img>
 
                 <div className="search--div">
-                    <button className="search--button">
+                    <button className="search--button" onClick={() => setopenSearch(!openSearch)}>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="search--icon">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                         </svg>
@@ -113,10 +135,21 @@ export default function App() {
                 </div>
             </div>
 
+            
 
             <div>
                 <p className="heading--popular">Popular on Netflix</p>
                 <PopularMoviesData />
+            </div>
+
+            <div>
+                <p className="heading--popular">Showing in Cinemas</p>
+                <ShowingNowMovies />
+            </div>
+
+            <div>
+                <p className="heading--popular">TV Shows</p>
+                <TvShowsData />
             </div>
 
             <div>
@@ -128,6 +161,8 @@ export default function App() {
                 <p className="heading--popular">Popular Drama in The Past Year</p>
                 <DramaData />
             </div>
+            
+            
         </div>
     )
 }

@@ -11,6 +11,7 @@ export default function DramaData() {
             .then(res => res.json())
             .then((data) => {
                 setItems(data.results);
+                console.log("this is adlt", data.results);
             })
     },[])
 

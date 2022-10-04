@@ -112,6 +112,51 @@ body {
     stroke: #DADADA;
 }
 
+.zzzz{
+    position:fixed;
+    z-index:1;
+}
+
+.search--input {
+    position: absolute;
+    top: 15px;
+    left: 750px;
+    z-index: 16;
+
+    width: 350px;
+    height: 25px;
+    padding: 13px;
+    background-color: transparent;
+    border: 0.5px solid deepskyblue;
+    color: #DADADA;
+    font-family: sans-serif;
+    outline: none;
+}
+
+
+
+.search--icon--activated {
+    position:absolute;
+    top:17px;
+    left:720px;
+    width: 30px;
+    height: 23px;
+    stroke: #DADADA;
+
+    z-index:16;
+
+}
+
+.search--back--icon{
+    position:absolute;
+    left:25px;
+    top:17px;
+    stroke:#DADADA;
+    width:30px;
+    z-index:16;
+}
+
+
 .dots--button {
     background-color: transparent;
     border: none;
