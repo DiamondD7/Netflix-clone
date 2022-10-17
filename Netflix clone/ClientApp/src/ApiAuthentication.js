@@ -7,6 +7,7 @@ export const Kids_URL = `${BASE_URL}/discover/movie?certification_country=US&cer
 export const Drama_URL = `${BASE_URL}/discover/movie?with_genres=18&primary_release_year=2021&${API_KEY}`;
 export const Poster_URL = `${BASE_URL}/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22&${API_KEY}`;
 export const Showing_URL = `${BASE_URL}/discover/movie?primary_release_date.gte=2022-08-01&primary_release_date.lte=2022-08-29&${API_KEY}`;
+export const Search_URL = `${BASE_URL}/search/movie?${API_KEY}`;
 /*export const Poster_URL = `${BASE_URL}/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22&${API_KEY}`;*/
 
 //api_key=57983e31fb435df4df77afb854740ea9&amp;include_adult=true&amp;amp;query=\1$$4&amp;amp;language=$INFO[language]&lt;/url&gt;
